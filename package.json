@@ -29,7 +29,6 @@
     "prepublishOnly": "npm run lint && npm run test",
     "test": "jest"
   },
-  "dependencies": {},
   "devDependencies": {
     "eslint": "^5.9.0",
     "eslint-config-airbnb-base": "^13.1.0",
