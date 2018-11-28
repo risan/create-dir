@@ -2,6 +2,7 @@
 const fs = require("fs");
 const createDir = require("../src");
 
+const VERSION = process.version;
 const BASE_DIR = `${__dirname}/fixtures`;
 
 const rmdir = path => {
@@ -25,6 +26,7 @@ beforeAll(() => fs.mkdirSync(BASE_DIR));
 afterAll(() => fs.rmdirSync(BASE_DIR));
 
 afterEach(() => {
+  process.env.CREATE_DIR_NODE_VERSION_TEST = VERSION;
   rmdir(`${BASE_DIR}/foo/bar/qux`);
   rmdir(`${BASE_DIR}/foo/bar`);
   rmdir(`${BASE_DIR}/foo`);
@@ -33,39 +35,34 @@ afterEach(() => {
 test("it can create directory", async () => {
   const path = `${BASE_DIR}/foo`;
 
-  let result;
-
-  result = await createDir(path);
+  const result = await createDir(path);
   expect(result).toBe(true);
   expect(fs.existsSync(path)).toBe(true);
-
-  result = await createDir(path);
-  expect(result).toBe(false);
 });
 
 test("it can create directory recursively", async () => {
   const path = `${BASE_DIR}/foo/bar/qux`;
 
-  let result;
-
-  result = await createDir(path);
+  const result = await createDir(path);
   expect(result).toBe(true);
   expect(fs.existsSync(path)).toBe(true);
+});
 
-  result = await createDir(path);
-  expect(result).toBe(false);
+test("it can create directory recursively in older node version", async () => {
+  process.env.CREATE_DIR_NODE_VERSION_TEST = "v8.0.0";
+  const path = `${BASE_DIR}/foo/bar/qux`;
+
+  const result = await createDir(path);
+  expect(result).toBe(true);
+  expect(fs.existsSync(path)).toBe(true);
 });
 
 test("it can set permission", async () => {
   const path1 = `${BASE_DIR}/foo`;
-  const result1 = await createDir(path1, 0o740);
-
-  expect(result1).toBe(true);
+  await createDir(path1, 0o740);
   expect(getPermission(path1)).toBe("740");
 
   const path2 = `${BASE_DIR}/foo/bar`;
-  const result2 = await createDir(path2, 0o754);
-
-  expect(result2).toBe(true);
+  await createDir(path2, 0o754);
   expect(getPermission(path2)).toBe("754");
 });

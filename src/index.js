@@ -17,11 +17,11 @@ const isDirNotExists = error => error.code === "ENOENT";
  * @return {Promise}
  */
 const createDir = async (path, mode = 0o777) => {
-  if (isSupportRecursive()) {
-    return mkdir(path, { mode, recursive: true });
-  }
+  if (isSupportRecursive(process.env.CREATE_DIR_NODE_VERSION_TEST)) {
+    await mkdir(path, { mode, recursive: true });
 
-  let result = true;
+    return true;
+  }
 
   try {
     await mkdir(path, mode);
@@ -32,14 +32,12 @@ const createDir = async (path, mode = 0o777) => {
       await createDir(dir, mode);
 
       await createDir(path, mode);
-    } else if (isDirAlreadyExists(error)) {
-      result = false;
-    } else {
+    } else if (!isDirAlreadyExists(error)) {
       throw error;
     }
   }
 
-  return result;
+  return true;
 };
 
 module.exports = createDir;

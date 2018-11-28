@@ -28,13 +28,7 @@ const createDir = require("create-dir");
 
 (async () => {
   try {
-    const created = await createDir("foo/bar/baz");
-
-    if (created) {
-      console.log("The directory is created!");
-    } else {
-      console.log("The directory already exists.");
-    }
+    await createDir("foo/bar/baz");
   } catch(error) {
     console.error(error.message);
   }
@@ -54,7 +48,7 @@ createDir(path, [mode])
 
 ### Returns
 
-It returns a `Promise` which when resolved contains a `Boolean` value. `true` means that the directory is created successfully. `false` means that the directory already exists.
+It returns a `Promise` which when resolved contains a `true` value.
 
 ## License
 
