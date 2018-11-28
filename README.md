@@ -50,6 +50,10 @@ createDir(path, [mode])
 
 It returns a `Promise` which when resolved contains a `true` value.
 
+## Related
+
+* [write-to-file](https://github.com/risan/write-to-file): Module to write data to file and automatically create its directories if not exists.
+
 ## License
 
 MIT © [Risan Bagja Pradana](https://bagja.net)
