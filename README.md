@@ -6,7 +6,7 @@
 [![Latest Stable Version](https://flat.badgen.net/npm/v/create-dir)](https://www.npmjs.com/package/create-dir)
 [![Node Version](https://flat.badgen.net/npm/node/create-dir)](https://www.npmjs.com/package/create-dir)
 [![Code Style: Prettier](https://flat.badgen.net/badge/code%20style/prettier/ff69b4)](https://github.com/prettier/prettier)
-[![License](https://flat.badgen.net/npm/license/create-dir)](https://github.com/risan/send-request/blob/master/LICENSE)
+[![License](https://flat.badgen.net/npm/license/create-dir)](https://github.com/risan/create-dir/blob/master/LICENSE)
 
 Create directory recursively.
 
