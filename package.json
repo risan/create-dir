@@ -1,7 +1,7 @@
 {
   "name": "create-dir",
-  "version": "1.0.2",
-  "description": "Create directory recursively",
+  "version": "1.0.3",
+  "description": "Create directory recursively.",
   "keywords": [
     "fs",
     "mkdir",

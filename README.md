@@ -1,27 +1,21 @@
 # Create Directory Recursively
 
-[![Build Status](https://flat.badgen.net/travis/risan/create-dir)](https://travis-ci.org/risan/create-dir)
-[![Test Coverage](https://flat.badgen.net/codeclimate/coverage/risan/create-dir)](https://codeclimate.com/github/risan/create-dir)
-[![Maintainability](https://flat.badgen.net/codeclimate/maintainability/risan/create-dir)](https://codeclimate.com/github/risan/create-dir)
-[![Latest Stable Version](https://flat.badgen.net/npm/v/create-dir)](https://www.npmjs.com/package/create-dir)
-[![Node Version](https://flat.badgen.net/npm/node/create-dir)](https://www.npmjs.com/package/create-dir)
-[![Code Style: Prettier](https://flat.badgen.net/badge/code%20style/prettier/ff69b4)](https://github.com/prettier/prettier)
-[![License](https://flat.badgen.net/npm/license/create-dir)](https://github.com/risan/create-dir/blob/master/LICENSE)
+[![Build Status](https://badgen.net/travis/risan/create-dir)](https://travis-ci.org/risan/create-dir)
+[![Test Covarage](https://badgen.net/codecov/c/github/risan/create-dir)](https://codecov.io/gh/risan/create-dir)
+[![Greenkeeper](https://badges.greenkeeper.io/risan/create-dir.svg)](https://greenkeeper.io)
+[![Latest Version](https://badgen.net/npm/v/create-dir)](https://www.npmjs.com/package/create-dir)
 
 Create directory recursively.
 
 It works similar to the `mkdir -p`. For Node `>= 10.12.0`, it will use the built-in `mkdir` `recursive` option.
 
-## Install
+## Installation
 
 ```bash
 $ npm install create-dir
-
-# Or if you use Yarn
-$ yarn add create-dir
 ```
 
-## Quick Start
+## Usage
 
 ```js
 const createDir = require("create-dir");
@@ -56,4 +50,4 @@ It returns a `Promise` which when resolved contains a `true` value.
 
 ## License
 
-MIT © [Risan Bagja Pradana](https://bagja.net)
+[MIT](https://github.com/risan/create-dir/blob/master/LICENSE) © [Risan Bagja Pradana](https://bagja.net)
