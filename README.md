@@ -2,7 +2,6 @@
 
 [![Build Status](https://badgen.net/travis/risan/create-dir)](https://travis-ci.org/risan/create-dir)
 [![Test Covarage](https://badgen.net/codecov/c/github/risan/create-dir)](https://codecov.io/gh/risan/create-dir)
-[![Greenkeeper](https://badges.greenkeeper.io/risan/create-dir.svg)](https://greenkeeper.io)
 [![Latest Version](https://badgen.net/npm/v/create-dir)](https://www.npmjs.com/package/create-dir)
 
 Create directory recursively.
